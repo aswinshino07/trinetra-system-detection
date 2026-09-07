@@ -1,0 +1,8 @@
+{
+  "name": "TRINETRA",
+  "description": "Satellite-Guided Fire Inhale Technology for Early Wildfire Signature Detection and Cooperative Warning",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

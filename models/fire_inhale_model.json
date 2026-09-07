@@ -1,0 +1,1162 @@
+{
+  "model_name": "Fire Inhale Random Forest Ensemble",
+  "version": "1.0-prototype",
+  "num_trees": 15,
+  "feature_names": [
+    "temperature",
+    "humidity",
+    "smoke",
+    "co",
+    "acoustic",
+    "temp_delta",
+    "smoke_delta",
+    "co_delta",
+    "temp_rate",
+    "smoke_rate",
+    "co_rate",
+    "temp_moving_avg",
+    "smoke_moving_avg",
+    "persistence",
+    "neighbour_confirmations"
+  ],
+  "metrics": {
+    "dataset_type": "Prototype / Simulation Dataset",
+    "test_samples": 450,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "confusion_matrix": [
+      [
+        150,
+        0,
+        0
+      ],
+      [
+        0,
+        150,
+        0
+      ],
+      [
+        0,
+        0,
+        150
+      ]
+    ]
+  },
+  "trees": [
+    {
+      "feature": "acoustic",
+      "feature_idx": 4,
+      "threshold": 0.5981,
+      "left": {
+        "feature": "temp_delta",
+        "feature_idx": 5,
+        "threshold": 1.0923,
+        "left": {
+          "feature": "acoustic",
+          "feature_idx": 4,
+          "threshold": 0.2094,
+          "left": {
+            "value": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          },
+          "right": {
+            "feature": "smoke_delta",
+            "feature_idx": 6,
+            "threshold": 0.5813,
+            "left": {
+              "value": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "right": {
+          "feature": "co_delta",
+          "feature_idx": 7,
+          "threshold": 4.1298,
+          "left": {
+            "feature": "humidity",
+            "feature_idx": 1,
+            "threshold": 53.7483,
+            "left": {
+              "feature": "co_delta",
+              "feature_idx": 7,
+              "threshold": 0.0971,
+              "left": {
+                "value": [
+                  1.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "right": {
+                "value": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              }
+            },
+            "right": {
+              "feature": "temp_delta",
+              "feature_idx": 5,
+              "threshold": 1.1904,
+              "left": {
+                "value": [
+                  1.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "right": {
+                "value": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              }
+            }
+          },
+          "right": {
+            "feature": "humidity",
+            "feature_idx": 1,
+            "threshold": 30.036,
+            "left": {
+              "feature": "neighbour_confirmations",
+              "feature_idx": 14,
+              "threshold": 0.0,
+              "left": {
+                "value": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              "right": {
+                "value": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            "right": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "right": {
+        "feature": "smoke_moving_avg",
+        "feature_idx": 12,
+        "threshold": 56.443,
+        "left": {
+          "value": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "right": {
+          "feature": "smoke_rate",
+          "feature_idx": 9,
+          "threshold": 0.8477,
+          "left": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "right": {
+            "value": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "feature": "persistence",
+      "feature_idx": 13,
+      "threshold": 1.0,
+      "left": {
+        "value": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "right": {
+        "feature": "persistence",
+        "feature_idx": 13,
+        "threshold": 4.0,
+        "left": {
+          "value": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "right": {
+          "value": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "feature": "persistence",
+      "feature_idx": 13,
+      "threshold": 4.0,
+      "left": {
+        "feature": "temp_rate",
+        "feature_idx": 8,
+        "threshold": 0.0647,
+        "left": {
+          "feature": "persistence",
+          "feature_idx": 13,
+          "threshold": 1.0,
+          "left": {
+            "value": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          },
+          "right": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          }
+        },
+        "right": {
+          "value": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        }
+      },
+      "right": {
+        "value": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "feature": "persistence",
+      "feature_idx": 13,
+      "threshold": 1.0,
+      "left": {
+        "value": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "right": {
+        "feature": "persistence",
+        "feature_idx": 13,
+        "threshold": 4.0,
+        "left": {
+          "value": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "right": {
+          "value": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "feature": "temp_delta",
+      "feature_idx": 5,
+      "threshold": 0.7736,
+      "left": {
+        "value": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "right": {
+        "feature": "temp_delta",
+        "feature_idx": 5,
+        "threshold": 6.685,
+        "left": {
+          "feature": "smoke_rate",
+          "feature_idx": 9,
+          "threshold": 0.4879,
+          "left": {
+            "feature": "smoke",
+            "feature_idx": 2,
+            "threshold": 23.0814,
+            "left": {
+              "value": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            }
+          },
+          "right": {
+            "feature": "co_delta",
+            "feature_idx": 7,
+            "threshold": 9.2909,
+            "left": {
+              "feature": "acoustic",
+              "feature_idx": 4,
+              "threshold": 0.4823,
+              "left": {
+                "value": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              "right": {
+                "value": [
+                  0.0,
+                  0.9523809523809523,
+                  0.047619047619047616
+                ]
+              }
+            },
+            "right": {
+              "value": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          }
+        },
+        "right": {
+          "feature": "smoke_rate",
+          "feature_idx": 9,
+          "threshold": 0.5949,
+          "left": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "right": {
+            "feature": "smoke_rate",
+            "feature_idx": 9,
+            "threshold": 0.7501,
+            "left": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "right": {
+              "feature": "neighbour_confirmations",
+              "feature_idx": 14,
+              "threshold": 1.0,
+              "left": {
+                "value": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              "right": {
+                "value": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "feature": "temperature",
+      "feature_idx": 0,
+      "threshold": 43.4623,
+      "left": {
+        "feature": "persistence",
+        "feature_idx": 13,
+        "threshold": 1.0,
+        "left": {
+          "value": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        "right": {
+          "feature": "smoke_rate",
+          "feature_idx": 9,
+          "threshold": 1.1564,
+          "left": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "right": {
+            "feature": "persistence",
+            "feature_idx": 13,
+            "threshold": 4.0,
+            "left": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          }
+        }
+      },
+      "right": {
+        "feature": "smoke_moving_avg",
+        "feature_idx": 12,
+        "threshold": 35.4395,
+        "left": {
+          "value": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "right": {
+          "value": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "feature": "smoke_rate",
+      "feature_idx": 9,
+      "threshold": 0.0626,
+      "left": {
+        "value": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "right": {
+        "feature": "smoke_delta",
+        "feature_idx": 6,
+        "threshold": 35.1411,
+        "left": {
+          "feature": "smoke",
+          "feature_idx": 2,
+          "threshold": 50.7062,
+          "left": {
+            "feature": "smoke_delta",
+            "feature_idx": 6,
+            "threshold": 10.5904,
+            "left": {
+              "feature": "smoke",
+              "feature_idx": 2,
+              "threshold": 22.2903,
+              "left": {
+                "value": [
+                  1.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "right": {
+                "value": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              }
+            },
+            "right": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            }
+          },
+          "right": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          }
+        },
+        "right": {
+          "feature": "smoke_moving_avg",
+          "feature_idx": 12,
+          "threshold": 142.0013,
+          "left": {
+            "feature": "temp_rate",
+            "feature_idx": 8,
+            "threshold": 0.2413,
+            "left": {
+              "feature": "smoke_moving_avg",
+              "feature_idx": 12,
+              "threshold": 68.299,
+              "left": {
+                "value": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              "right": {
+                "value": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            "right": {
+              "value": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          },
+          "right": {
+            "value": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "feature": "smoke_rate",
+      "feature_idx": 9,
+      "threshold": 3.0219,
+      "left": {
+        "feature": "co_rate",
+        "feature_idx": 10,
+        "threshold": 0.0243,
+        "left": {
+          "feature": "temperature",
+          "feature_idx": 0,
+          "threshold": 27.9791,
+          "left": {
+            "value": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          },
+          "right": {
+            "feature": "smoke_delta",
+            "feature_idx": 6,
+            "threshold": 19.3328,
+            "left": {
+              "feature": "smoke_moving_avg",
+              "feature_idx": 12,
+              "threshold": 20.9686,
+              "left": {
+                "value": [
+                  1.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "right": {
+                "value": [
+                  0.75,
+                  0.25,
+                  0.0
+                ]
+              }
+            },
+            "right": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "right": {
+          "feature": "co_delta",
+          "feature_idx": 7,
+          "threshold": 13.6731,
+          "left": {
+            "feature": "persistence",
+            "feature_idx": 13,
+            "threshold": 4.0,
+            "left": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          },
+          "right": {
+            "value": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        }
+      },
+      "right": {
+        "value": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "feature": "temp_rate",
+      "feature_idx": 8,
+      "threshold": 0.3262,
+      "left": {
+        "feature": "acoustic",
+        "feature_idx": 4,
+        "threshold": 0.2409,
+        "left": {
+          "feature": "persistence",
+          "feature_idx": 13,
+          "threshold": 1.0,
+          "left": {
+            "value": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          },
+          "right": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          }
+        },
+        "right": {
+          "feature": "co_delta",
+          "feature_idx": 7,
+          "threshold": 5.6527,
+          "left": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "right": {
+            "value": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        }
+      },
+      "right": {
+        "value": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "feature": "smoke_delta",
+      "feature_idx": 6,
+      "threshold": 1.7934,
+      "left": {
+        "value": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "right": {
+        "feature": "smoke_rate",
+        "feature_idx": 9,
+        "threshold": 1.192,
+        "left": {
+          "feature": "co_rate",
+          "feature_idx": 10,
+          "threshold": 0.0386,
+          "left": {
+            "feature": "temp_delta",
+            "feature_idx": 5,
+            "threshold": 1.1863,
+            "left": {
+              "value": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            }
+          },
+          "right": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          }
+        },
+        "right": {
+          "feature": "smoke_moving_avg",
+          "feature_idx": 12,
+          "threshold": 144.5294,
+          "left": {
+            "feature": "acoustic",
+            "feature_idx": 4,
+            "threshold": 0.4817,
+            "left": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          },
+          "right": {
+            "value": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "feature": "persistence",
+      "feature_idx": 13,
+      "threshold": 4.0,
+      "left": {
+        "feature": "smoke_delta",
+        "feature_idx": 6,
+        "threshold": 3.0331,
+        "left": {
+          "value": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        "right": {
+          "value": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        }
+      },
+      "right": {
+        "value": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "feature": "temp_delta",
+      "feature_idx": 5,
+      "threshold": 0.7717,
+      "left": {
+        "value": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "right": {
+        "feature": "temp_delta",
+        "feature_idx": 5,
+        "threshold": 6.2579,
+        "left": {
+          "feature": "acoustic",
+          "feature_idx": 4,
+          "threshold": 0.2407,
+          "left": {
+            "feature": "persistence",
+            "feature_idx": 13,
+            "threshold": 1.0,
+            "left": {
+              "value": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            }
+          },
+          "right": {
+            "feature": "persistence",
+            "feature_idx": 13,
+            "threshold": 4.0,
+            "left": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          }
+        },
+        "right": {
+          "feature": "smoke",
+          "feature_idx": 2,
+          "threshold": 202.2095,
+          "left": {
+            "feature": "persistence",
+            "feature_idx": 13,
+            "threshold": 4.0,
+            "left": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          },
+          "right": {
+            "value": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "feature": "temp_delta",
+      "feature_idx": 5,
+      "threshold": 9.2018,
+      "left": {
+        "feature": "smoke_moving_avg",
+        "feature_idx": 12,
+        "threshold": 25.7843,
+        "left": {
+          "feature": "co_rate",
+          "feature_idx": 10,
+          "threshold": 0.0679,
+          "left": {
+            "feature": "persistence",
+            "feature_idx": 13,
+            "threshold": 1.0,
+            "left": {
+              "value": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            }
+          },
+          "right": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          }
+        },
+        "right": {
+          "feature": "persistence",
+          "feature_idx": 13,
+          "threshold": 4.0,
+          "left": {
+            "feature": "co_delta",
+            "feature_idx": 7,
+            "threshold": 0.0795,
+            "left": {
+              "value": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            }
+          },
+          "right": {
+            "value": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        }
+      },
+      "right": {
+        "value": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "feature": "persistence",
+      "feature_idx": 13,
+      "threshold": 4.0,
+      "left": {
+        "feature": "co_delta",
+        "feature_idx": 7,
+        "threshold": 1.2058,
+        "left": {
+          "feature": "smoke",
+          "feature_idx": 2,
+          "threshold": 74.9267,
+          "left": {
+            "feature": "persistence",
+            "feature_idx": 13,
+            "threshold": 1.0,
+            "left": {
+              "value": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "right": {
+              "value": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            }
+          },
+          "right": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          }
+        },
+        "right": {
+          "value": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        }
+      },
+      "right": {
+        "value": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "feature": "acoustic",
+      "feature_idx": 4,
+      "threshold": 0.5709,
+      "left": {
+        "feature": "persistence",
+        "feature_idx": 13,
+        "threshold": 1.0,
+        "left": {
+          "value": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        "right": {
+          "feature": "co",
+          "feature_idx": 3,
+          "threshold": 9.4936,
+          "left": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "right": {
+            "feature": "temp_rate",
+            "feature_idx": 8,
+            "threshold": 0.3771,
+            "left": {
+              "feature": "co_delta",
+              "feature_idx": 7,
+              "threshold": 4.808,
+              "left": {
+                "value": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              "right": {
+                "value": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            "right": {
+              "value": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          }
+        }
+      },
+      "right": {
+        "feature": "humidity",
+        "feature_idx": 1,
+        "threshold": 38.4558,
+        "left": {
+          "feature": "smoke_rate",
+          "feature_idx": 9,
+          "threshold": 0.8477,
+          "left": {
+            "value": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "right": {
+            "value": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        "right": {
+          "value": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        }
+      }
+    }
+  ]
+}
